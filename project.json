@@ -3,10 +3,12 @@
   "description": "SCT9 Project 2 for Team Diamond",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.9.5]",
+    "UiPath.Excel.Activities": "[2.11.4]",
     "UiPath.Mail.Activities": "[1.9.5]",
+    "UiPath.PDF.Activities": "[3.6.0]",
     "UiPath.System.Activities": "[20.10.4]",
-    "UiPath.UIAutomation.Activities": "[20.10.9]"
+    "UiPath.UIAutomation.Activities": "[20.10.9]",
+    "UiPath.Word.Activities": "[1.7.3]"
   },
   "webServices": [],
   "entitiesStores": [],
