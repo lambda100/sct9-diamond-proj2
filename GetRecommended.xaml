@@ -665,7 +665,7 @@
                           <OutArgument x:TypeArguments="x:String">[Url_str]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[Url_str.Split("?"c).First]</InArgument>
+                          <InArgument x:TypeArguments="x:String">["https://www." + Url_str.Split("?"c).First]</InArgument>
                         </Assign.Value>
                       </Assign>
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="724.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[Url_str]" />
