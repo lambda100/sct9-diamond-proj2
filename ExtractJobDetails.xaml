@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ExtractJobDetails" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="894,460" sap2010:WorkflowViewState.IdRef="ExtractJobDetails_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ExtractJobDetails" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="894,3735.33333333333" sap2010:WorkflowViewState.IdRef="ExtractJobDetails_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
       <x:String>System.Activities</x:String>
@@ -35,7 +35,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -55,9 +55,17 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ExtractJobDetails" sap:VirtualizedContainerService.HintSize="587.333333333333,3227.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExtractJobDetails" sap:VirtualizedContainerService.HintSize="587.333333333333,3670.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="Details_dt" />
       <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="URL_ienum" />
@@ -65,50 +73,47 @@
       <Variable x:TypeArguments="x:String" Name="Company" />
       <Variable x:TypeArguments="x:String" Name="Position" />
       <Variable x:TypeArguments="x:String" Name="Score" />
-      <Variable x:TypeArguments="x:String" Name="Gap">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">NA</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="NA" Name="Gap" />
       <Variable x:TypeArguments="x:String" Name="EmpType" />
       <Variable x:TypeArguments="x:String" Name="JobLevel" />
       <Variable x:TypeArguments="x:String" Name="JobFunction" />
       <Variable x:TypeArguments="x:String" Name="Address" />
       <Variable x:TypeArguments="x:String" Name="YearExperience" />
+      <Variable x:TypeArguments="x:String" Name="DetailsOutput" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BuildDataTable DataTable="[Details_dt]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="545.333333333333,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Job_x0020_Ref&quot; msdata:Caption=&quot;&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Company&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Position&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Score&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Gap&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Emp_x0020_Type&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Job_x0020_Level&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Job_x0020_Function&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Year_x0020_Exp&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:BuildDataTable DataTable="[Details_dt]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="545.333333333333,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Job_x0020_Ref&quot; msdata:Caption=&quot;&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Company&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Position&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Score&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Gap&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Emp_x0020_Type&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Job_x0020_Level&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Job_x0020_Function&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Year_x0020_Exp&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
     <ui:ReadColumn DisplayName="Read Column" sap:VirtualizedContainerService.HintSize="545.333333333333,86.6666666666667" sap2010:WorkflowViewState.IdRef="ReadColumn_1" Result="[URL_ienum]" SheetName="Sheet1" StartingCell="E2" WorkbookPath="output\Report.xlsx" />
-    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="545.333333333333,2910" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[URL_ienum]">
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="545.333333333333,3034" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[URL_ienum]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="508.666666666667,2782" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="508.666666666667,2906" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="466.666666666667,2690" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[item.tostring]">
+            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="466.666666666667,2814" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[item.tostring]">
               <ui:OpenBrowser.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence sap:VirtualizedContainerService.HintSize="418,2587.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence sap:VirtualizedContainerService.HintSize="418,2711.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="376,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[item.ToString]" />
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,2392.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,2516.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -116,7 +121,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Job Ref" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
                         <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="124fd59c-ff39-4c70-aa1e-71e7dd5d6a3f" InformativeScreenshot="a9438c0d67849dd9480c4ffe7801fde2" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xD;&#xA;&lt;webctrl parentid='job-details' tag='SPAN' class='black-60 db f6 fw4 mv1' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' /&gt;&#xD;&#xA;">
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="124fd59c-ff39-4c70-aa1e-71e7dd5d6a3f" InformativeScreenshot="a9438c0d67849dd9480c4ffe7801fde2" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xA;&lt;webctrl parentid='job-details' tag='SPAN' class='black-60 db f6 fw4 mv1' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' /&gt;&#xA;">
                             <ui:Target.TimeoutMS>
                               <InArgument x:TypeArguments="x:Int32" />
                             </ui:Target.TimeoutMS>
@@ -132,7 +137,7 @@
                       <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[JobRef]" />
                       <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Company" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
                         <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7b71ae5b-855c-46b2-9da1-077b18fab4ca" InformativeScreenshot="abd7661f4e18517fd3bffea78225b827" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xD;&#xA;&lt;webctrl tag='P' class='f6 fw6 mv0 black-80 mr2 di ttu' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;p' parentid='job-details' /&gt;&#xD;&#xA;">
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7b71ae5b-855c-46b2-9da1-077b18fab4ca" InformativeScreenshot="abd7661f4e18517fd3bffea78225b827" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xA;&lt;webctrl tag='P' class='f6 fw6 mv0 black-80 mr2 di ttu' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;p' parentid='job-details' /&gt;&#xA;">
                             <ui:Target.TimeoutMS>
                               <InArgument x:TypeArguments="x:Int32" />
                             </ui:Target.TimeoutMS>
@@ -148,7 +153,7 @@
                       <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[Company]" />
                       <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Position" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_3">
                         <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b0ad3a2e-5c0a-4505-a314-a951bed5f2d4" InformativeScreenshot="a38c126661882831d466fcfe08b5be00" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xD;&#xA;&lt;webctrl tag='H1' class='f3 fw6 mv0 pv0 mb1 dark-pink w-100 dib' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;h1' parentid='job-details' /&gt;&#xD;&#xA;">
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b0ad3a2e-5c0a-4505-a314-a951bed5f2d4" InformativeScreenshot="a38c126661882831d466fcfe08b5be00" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xA;&lt;webctrl tag='H1' class='f3 fw6 mv0 pv0 mb1 dark-pink w-100 dib' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;h1' parentid='job-details' /&gt;&#xA;">
                             <ui:Target.TimeoutMS>
                               <InArgument x:TypeArguments="x:Int32" />
                             </ui:Target.TimeoutMS>
@@ -164,7 +169,7 @@
                       <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[Position]" />
                       <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Score" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_4">
                         <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f4ac9c47-9fcc-4d72-9691-2d3a59147e99" InformativeScreenshot="1c5c53cb64b6c3bbb2b591c97ea99430" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xD;&#xA;&lt;webctrl tag='SPAN' class='green f5 fw4 i' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;span' parentid='job-details' /&gt;&#xD;&#xA;">
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f4ac9c47-9fcc-4d72-9691-2d3a59147e99" InformativeScreenshot="1c5c53cb64b6c3bbb2b591c97ea99430" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xA;&lt;webctrl tag='SPAN' class='green f5 fw4 i' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;span' parentid='job-details' /&gt;&#xA;">
                             <ui:Target.TimeoutMS>
                               <InArgument x:TypeArguments="x:Int32" />
                             </ui:Target.TimeoutMS>
@@ -181,7 +186,7 @@
                       <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[Gap]" />
                       <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Employment Type'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_5">
                         <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d261dcb0-f928-406e-ab41-89e583b6af2e" InformativeScreenshot="790a17a457ab659a2e5054466e8197ab" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xD;&#xA;&lt;webctrl tag='P' class='black-60 f6 fw4 mv1 dib pr3 mr1  icon-bw-employment-type' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;p' parentid='job_info' /&gt;&#xD;&#xA;">
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d261dcb0-f928-406e-ab41-89e583b6af2e" InformativeScreenshot="790a17a457ab659a2e5054466e8197ab" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xA;&lt;webctrl tag='P' class='black-60 f6 fw4 mv1 dib pr3 mr1  icon-bw-employment-type' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;p' parentid='job_info' /&gt;&#xA;">
                             <ui:Target.TimeoutMS>
                               <InArgument x:TypeArguments="x:Int32" />
                             </ui:Target.TimeoutMS>
@@ -197,7 +202,7 @@
                       <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[EmpType]" />
                       <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Job Level" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_6">
                         <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7637b7bc-a7e5-40dd-b72a-e81f4fd636f3" InformativeScreenshot="0d33459434322255214b2bfb292c2371" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xD;&#xA;&lt;webctrl tag='P' class='black-60 f6 fw4 mv1 dib pr3 mr1  icon-bw-seniority' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;p' parentid='job_info' /&gt;&#xD;&#xA;">
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7637b7bc-a7e5-40dd-b72a-e81f4fd636f3" InformativeScreenshot="0d33459434322255214b2bfb292c2371" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xA;&lt;webctrl tag='P' class='black-60 f6 fw4 mv1 dib pr3 mr1  icon-bw-seniority' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;p' parentid='job_info' /&gt;&#xA;">
                             <ui:Target.TimeoutMS>
                               <InArgument x:TypeArguments="x:Int32" />
                             </ui:Target.TimeoutMS>
@@ -213,7 +218,7 @@
                       <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[JobLevel]" />
                       <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Job Function" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_7">
                         <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="104cf3a7-8c72-4c64-b54f-d218f3e5cb1e" InformativeScreenshot="ea3351fe620166bf35e0c8c863c94e3e" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xD;&#xA;&lt;webctrl tag='P' class='black-60 f6 fw4 mv1 dib pr3 mr1  icon-bw-category' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;p' parentid='job_info' /&gt;&#xD;&#xA;">
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="104cf3a7-8c72-4c64-b54f-d218f3e5cb1e" InformativeScreenshot="ea3351fe620166bf35e0c8c863c94e3e" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xA;&lt;webctrl tag='P' class='black-60 f6 fw4 mv1 dib pr3 mr1  icon-bw-category' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;p' parentid='job_info' /&gt;&#xA;">
                             <ui:Target.TimeoutMS>
                               <InArgument x:TypeArguments="x:Int32" />
                             </ui:Target.TimeoutMS>
@@ -229,7 +234,7 @@
                       <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_10" Text="[JobFunction]" />
                       <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Adddress" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_8">
                         <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f0cc7a17-293e-4d10-88fa-3f586da99c61" InformativeScreenshot="9350193b4fddfab2f238bdcdd1a553b7" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xD;&#xA;&lt;webctrl tag='P' class='black-60 f6 fw4 mv1 dib pr3 mr1  icon-bw-location' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;p' parentid='job_info' /&gt;&#xD;&#xA;">
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f0cc7a17-293e-4d10-88fa-3f586da99c61" InformativeScreenshot="9350193b4fddfab2f238bdcdd1a553b7" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xA;&lt;webctrl tag='P' class='black-60 f6 fw4 mv1 dib pr3 mr1  icon-bw-location' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;p' parentid='job_info' /&gt;&#xA;">
                             <ui:Target.TimeoutMS>
                               <InArgument x:TypeArguments="x:Int32" />
                             </ui:Target.TimeoutMS>
@@ -245,7 +250,7 @@
                       <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_11" Text="[Address]" />
                       <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Year of Experience" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_9">
                         <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d1553508-8112-49c3-9a4a-4dd0742fdaa2" InformativeScreenshot="4d91a78d103a30cc6b47a35952b8614b" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xD;&#xA;&lt;webctrl tag='P' class='black-60 f6 fw4 mv1 dib pr3 mr1  icon-bw-period' parentid='job_info' /&gt;&#xD;&#xA;">
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d1553508-8112-49c3-9a4a-4dd0742fdaa2" InformativeScreenshot="4d91a78d103a30cc6b47a35952b8614b" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xA;&lt;webctrl tag='P' class='black-60 f6 fw4 mv1 dib pr3 mr1  icon-bw-period' parentid='job_info' /&gt;&#xA;">
                             <ui:Target.TimeoutMS>
                               <InArgument x:TypeArguments="x:Int32" />
                             </ui:Target.TimeoutMS>
@@ -259,6 +264,8 @@
                         </ui:GetValue.Value>
                       </ui:GetValue>
                       <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="[YearExperience]" />
+                      <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{JobRef,Company,Position,Score,Gap,EmpType,JobLevel,JobFunction,Address,YearExperience}]" DataTable="[Details_dt]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                     </Sequence>
                   </Sequence>
                 </ActivityAction>
@@ -267,6 +274,15 @@
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
+    <ui:OutputDataTable DataTable="[Details_dt]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="545.333333333333,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[DetailsOutput]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="545.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="[DetailsOutput]" />
+    <ui:WriteRange AddHeaders="False" DataTable="[Details_dt]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="545.333333333333,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="F2" WorkbookPath="output\Report.xlsx" />
   </Sequence>
 </Activity>
