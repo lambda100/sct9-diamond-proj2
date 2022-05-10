@@ -362,14 +362,14 @@
                                       <av:PointCollection x:Key="ConnectorLocation">320,194.4 320,236.4</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="476.8,651.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  myskills'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_19" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  myskills'" sap:VirtualizedContainerService.HintSize="435.2,107.2" sap2010:WorkflowViewState.IdRef="Click_19" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                                       <ui:Click.CursorPosition>
                                         <ui:CursorPosition Position="Center">
                                           <ui:CursorPosition.OffsetX>
@@ -397,8 +397,19 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:Click>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[item.ToString]" />
-                                    <ui:UiElementExists DisplayName="Element Exists 'grouping'" Exists="[SkillsField_exists]" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
+                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,264" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                                      <ui:CommentOut.Body>
+                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,185.6" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[item.ToString]" />
+                                        </Sequence>
+                                      </ui:CommentOut.Body>
+                                    </ui:CommentOut>
+                                    <ui:UiElementExists DisplayName="Element Exists 'grouping'" Exists="[SkillsField_exists]" sap:VirtualizedContainerService.HintSize="435.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
                                       <ui:UiElementExists.Target>
                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d5e23b1b-abcd-4d7c-b0f1-93a94f37748a" InformativeScreenshot="19a0cf9badeb0cc3380fd2ea6ff4334e" Selector="&lt;webctrl parentid='react-select-*--value' tag='DIV' aaname='e.g. &amp;apos;Accounting&amp;apos; or &amp;apos;Accountant&amp;apos;' /&gt;">
                                           <ui:Target.TimeoutMS>

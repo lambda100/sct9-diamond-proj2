@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ReadResume" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1148.8,4375.2" sap2010:WorkflowViewState.IdRef="ReadResume_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ReadResume" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1148.8,5284.8" sap2010:WorkflowViewState.IdRef="ReadResume_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
       <x:String>System.Activities</x:String>
@@ -69,8 +69,8 @@
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -78,7 +78,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="For each file in folder,&#xA;    for each skill in Skill Database,&#xA;        check if exists&#xA;        if exists,&#xA;            create as Skill List&#xA;            add into Skills column in Excel&#xA;    for each category in Category Database&#xA;        check if exists&#xA;        if exits&#xA;            count&#xA;            add highest count into Category column in Excel" DisplayName="ReadResume" sap:VirtualizedContainerService.HintSize="1159.2,4310.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="For each file in folder,&#xA;    for each skill in Skill Database,&#xA;        check if exists&#xA;        if exists,&#xA;            create as Skill List&#xA;            add into Skills column in Excel&#xA;    for each category in Category Database&#xA;        check if exists&#xA;        if exits&#xA;            count&#xA;            add highest count into Category column in Excel" DisplayName="ReadResume" sap:VirtualizedContainerService.HintSize="1159.2,5220" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ResumeFolder" />
       <Variable x:TypeArguments="x:String" Name="SkillsFile" />
@@ -129,13 +129,13 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each File in Folder" sap:VirtualizedContainerService.HintSize="1117.6,3289.6" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Directory.GetFiles(ResumeFolder,&quot;*.*&quot;)]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each File in Folder" sap:VirtualizedContainerService.HintSize="1117.6,4199.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Directory.GetFiles(ResumeFolder,&quot;*.*&quot;)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body for Each File in Folder" sap:VirtualizedContainerService.HintSize="1082.4,3164.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body for Each File in Folder" sap:VirtualizedContainerService.HintSize="1082.4,4074.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="ReportOutput" />
               <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="Categories_ienum" />
@@ -175,16 +175,16 @@
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <If Condition="[ResumeFileType = &quot;doc&quot; OR ResumeFileType = &quot;docx&quot;]" sap:VirtualizedContainerService.HintSize="1040.8,468" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[ResumeFileType = &quot;doc&quot; OR ResumeFileType = &quot;docx&quot;]" sap:VirtualizedContainerService.HintSize="1040.8,468" sap2010:WorkflowViewState.IdRef="If_8">
               <If.Then>
-                <Sequence DisplayName="Seq - Word route" sap:VirtualizedContainerService.HintSize="475.2,318.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Seq - Word route" sap:VirtualizedContainerService.HintSize="475.2,318.4" sap2010:WorkflowViewState.IdRef="Sequence_22">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Trace" Message="[ResumeFile + &quot; enters MS Word route&quot;]" />
-                  <p:DocumentReadText DisplayName="Read Text" FilePath="[item]" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="DocumentReadText_1" Text="[ResumeOutput]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Trace" Message="[ResumeFile + &quot; enters MS Word route&quot;]" />
+                  <p:DocumentReadText DisplayName="Read Text" FilePath="[item]" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="DocumentReadText_3" Text="[ResumeOutput]" />
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -199,6 +199,19 @@
                 </Sequence>
               </If.Else>
             </If>
+            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[ResumeFileType]" sap:VirtualizedContainerService.HintSize="1040.8,868.8" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+              <x:Null x:Key="&quot;pdf&quot;" />
+              <x:Null x:Key="&quot;doc&quot;" />
+              <Sequence x:Key="&quot;docx&quot;" DisplayName="Seq - Word route" sap:VirtualizedContainerService.HintSize="475.2,318.4" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Trace" Message="[ResumeFile + &quot; enters MS Word route&quot;]" />
+                <p:DocumentReadText DisplayName="Read Text" FilePath="[item]" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="DocumentReadText_4" Text="[ResumeOutput]" />
+              </Sequence>
+            </Switch>
             <ui:ReadColumn DisplayName="Read Column for Skills" sap:VirtualizedContainerService.HintSize="1040.8,88" sap2010:WorkflowViewState.IdRef="ReadColumn_2" Result="[SkillsIenum]" SheetName="Sheet1" StartingCell="A2" WorkbookPath="[SkillsFile]" />
             <Assign sap:VirtualizedContainerService.HintSize="1040.8,60" sap2010:WorkflowViewState.IdRef="Assign_12">
               <Assign.To>
@@ -285,28 +298,28 @@
               </ui:ForEach.Body>
             </ui:ForEach>
             <ui:ReadColumn DisplayName="Read Column for Categories" sap:VirtualizedContainerService.HintSize="1040.8,88" sap2010:WorkflowViewState.IdRef="ReadColumn_3" Result="[Categories_ienum]" SheetName="Sheet1" StartingCell="B2" WorkbookPath="[CategoriesFile]" />
-            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each Category" sap:VirtualizedContainerService.HintSize="1040.8,669.6" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Categories_ienum]">
+            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each Category" sap:VirtualizedContainerService.HintSize="1040.8,670.4" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Categories_ienum]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="560.8,544.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="560.8,545.6" sap2010:WorkflowViewState.IdRef="Sequence_19">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[ResumeOutput.Contains(item.ToString)]" sap:VirtualizedContainerService.HintSize="519.2,452" sap2010:WorkflowViewState.IdRef="If_7">
+                    <If Condition="[ResumeOutput.Contains(item.ToString)]" sap:VirtualizedContainerService.HintSize="519.2,452.8" sap2010:WorkflowViewState.IdRef="If_7">
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="375.2,302.4" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                        <Sequence sap:VirtualizedContainerService.HintSize="375.2,303.2" sap2010:WorkflowViewState.IdRef="Sequence_18">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:Comment sap:VirtualizedContainerService.HintSize="333.6,94.4" sap2010:WorkflowViewState.IdRef="Comment_1" Text="For each match, create new Dictionary pair&#xA;&#xA;If already exist, +1" />
-                          <ui:Comment sap:VirtualizedContainerService.HintSize="333.6,75.2" sap2010:WorkflowViewState.IdRef="Comment_2" Text="&quot;Recommended&quot; ignores industry. Even if I can get this work, this is meaningless." />
+                          <ui:Comment sap:VirtualizedContainerService.HintSize="333.6,76" sap2010:WorkflowViewState.IdRef="Comment_2" Text="&quot;Recommended&quot; ignores industry. Even if I can get this work, this is meaningless." />
                         </Sequence>
                       </If.Then>
                     </If>
@@ -367,7 +380,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:WriteCell sap2010:Annotation.AnnotationText="Clear sheet" Cell="A1:O20" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1117.6,147.2" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" WorkbookPath="output/Report.xlsx">
+    <ui:WriteCell sap2010:Annotation.AnnotationText="Clear sheet" Cell="A1:P99" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1117.6,147.2" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" WorkbookPath="output/Report.xlsx">
       <ui:WriteCell.Text>
         <InArgument x:TypeArguments="x:String">
           <Literal x:TypeArguments="x:String" Value="" />

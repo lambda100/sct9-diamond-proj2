@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="WriteIndividualReport" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1050.4,2842.4" sap2010:WorkflowViewState.IdRef="WriteIndividualReport_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="WriteIndividualReport" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1050.4,3574.4" sap2010:WorkflowViewState.IdRef="WriteIndividualReport_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="66">
       <x:String>System.Activities</x:String>
@@ -72,7 +72,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Convert Report.xlsx to multiple individual Report for each applicant" DisplayName="WriteIndividualReport" sap:VirtualizedContainerService.HintSize="625.6,2737.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Convert Report.xlsx to multiple individual Report for each applicant" DisplayName="WriteIndividualReport" sap:VirtualizedContainerService.HintSize="625.6,3469.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Report" />
       <Variable x:TypeArguments="x:Int32" Name="RowCount" />
@@ -134,13 +134,13 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Report]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="584,1977.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Report]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="584,2709.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body of FER in dt_Report" sap:VirtualizedContainerService.HintSize="550.4,1861.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body of FER in dt_Report" sap:VirtualizedContainerService.HintSize="550.4,2593.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="Counter" />
               <Variable x:TypeArguments="x:String" Name="IndexNum" />
@@ -356,20 +356,25 @@
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <ui:Replace BuilderPattern="(?:,)*" sap:VirtualizedContainerService.HintSize="508.8,60" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[ApplicantSkills]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;,&quot;,&quot;QuantifierFirstValue&quot;:&quot;*&quot;,&quot;QuantifierID&quot;:&quot;ANY&quot;,&quot;QuantifierName&quot;:&quot;Any (0 or more)&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?:,)*" RegexOption="IgnoreCase, Compiled" Replacement=", " Result="[ApplicantSkills]" />
-            <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="[&quot;output/reports/&quot; + NowDate + &quot;-&quot; + FileName + &quot;.docx&quot;]" sap:VirtualizedContainerService.HintSize="508.8,748" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+            <ui:Replace BuilderPattern=",*" sap:VirtualizedContainerService.HintSize="508.8,60" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[ApplicantSkills]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;,&quot;,&quot;QuantifierFirstValue&quot;:&quot;*&quot;,&quot;QuantifierID&quot;:&quot;ANY&quot;,&quot;QuantifierName&quot;:&quot;Any (0 or more)&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="," RegexOption="IgnoreCase, Compiled" Replacement=", " Result="[ApplicantSkills]" />
+            <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="[&quot;output/reports/&quot; + NowDate + &quot;-&quot; + FileName + &quot;.docx&quot;]" sap:VirtualizedContainerService.HintSize="508.8,1480" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
               <p:WordApplicationScope.Body>
                 <ActivityAction x:TypeArguments="ui:WordDocument">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="475.2,638.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="475.2,1370.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="433.6,106.4" sap2010:WorkflowViewState.IdRef="WordAppendText_1" NewLine="False" Text="[&quot;Applicant &quot; + FileName + &quot; matches with &quot; + JobPosition + &quot; at &quot; + JobCompany]" />
+                    <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="433.6,106.4" sap2010:WorkflowViewState.IdRef="WordAppendText_1" NewLine="False" Text="Applicant:" />
+                    <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="433.6,106.4" sap2010:WorkflowViewState.IdRef="WordAppendText_5" Text="[FileName]" />
+                    <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="433.6,106.4" sap2010:WorkflowViewState.IdRef="WordAppendText_6" Text="matched with:" />
+                    <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="433.6,106.4" sap2010:WorkflowViewState.IdRef="WordAppendText_7" Text="[JobPosition]" />
+                    <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="433.6,106.4" sap2010:WorkflowViewState.IdRef="WordAppendText_8" Text="at" />
+                    <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="433.6,106.4" sap2010:WorkflowViewState.IdRef="WordAppendText_9" Text="[JobCompany]" />
                     <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="433.6,106.4" sap2010:WorkflowViewState.IdRef="WordAppendText_2" Text="[&quot;Score: &quot; + ApplicantScore]" />
                     <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="433.6,106.4" sap2010:WorkflowViewState.IdRef="WordAppendText_3" Text="[&quot;Skills: &quot; + ApplicantSkills]" />
                     <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="433.6,106.4" sap2010:WorkflowViewState.IdRef="WordAppendText_4" Text="[&quot;Gap: &quot; + ApplicantSkillsGap]" />
