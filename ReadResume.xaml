@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ReadResume" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1050.4,4424" sap2010:WorkflowViewState.IdRef="ReadResume_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ReadResume" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1148.8,4375.2" sap2010:WorkflowViewState.IdRef="ReadResume_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
       <x:String>System.Activities</x:String>
@@ -37,7 +37,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="62">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -69,6 +69,8 @@
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -76,7 +78,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="For each file in folder,&#xA;    for each skill in Skill Database,&#xA;        check if exists&#xA;        if exists,&#xA;            create as Skill List&#xA;            add into Skills column in Excel&#xA;    for each category in Category Database&#xA;        check if exists&#xA;        if exits&#xA;            count&#xA;            add highest count into Category column in Excel" DisplayName="ReadResume" sap:VirtualizedContainerService.HintSize="1012.8,4359.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="For each file in folder,&#xA;    for each skill in Skill Database,&#xA;        check if exists&#xA;        if exists,&#xA;            create as Skill List&#xA;            add into Skills column in Excel&#xA;    for each category in Category Database&#xA;        check if exists&#xA;        if exits&#xA;            count&#xA;            add highest count into Category column in Excel" DisplayName="ReadResume" sap:VirtualizedContainerService.HintSize="1159.2,4310.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ResumeFolder" />
       <Variable x:TypeArguments="x:String" Name="SkillsFile" />
@@ -96,38 +98,44 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BuildDataTable DataTable="[dt_Report]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="971.2,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;No.&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Filename&quot; msdata:Caption=&quot;&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Skills&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Category&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-    <Assign sap:VirtualizedContainerService.HintSize="971.2,60" sap2010:WorkflowViewState.IdRef="Assign_5">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[SkillsFile]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">input/Skillsets.xlsx</InArgument>
-      </Assign.Value>
-    </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="971.2,60" sap2010:WorkflowViewState.IdRef="Assign_16">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[CategoriesFile]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">input/JobFunctions.xlsx</InArgument>
-      </Assign.Value>
-    </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="971.2,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[ResumeFolder]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">input/resumes</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each File in Folder" sap:VirtualizedContainerService.HintSize="971.2,3242.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Directory.GetFiles(ResumeFolder,&quot;*.*&quot;)]">
+    <ui:BuildDataTable DataTable="[dt_Report]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="1117.6,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;No.&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Filename&quot; msdata:Caption=&quot;&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Skills&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Category&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1117.6,164" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[SkillsFile]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">input/Skillsets.xlsx</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[CategoriesFile]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">input/JobFunctions.xlsx</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[ResumeFolder]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">input/resumes</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each File in Folder" sap:VirtualizedContainerService.HintSize="1117.6,3289.6" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Directory.GetFiles(ResumeFolder,&quot;*.*&quot;)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body for Each File in Folder" sap:VirtualizedContainerService.HintSize="936,3117.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body for Each File in Folder" sap:VirtualizedContainerService.HintSize="1082.4,3164.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="ReportOutput" />
               <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="Categories_ienum" />
@@ -137,31 +145,37 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="894.4,60" sap2010:WorkflowViewState.IdRef="Assign_8">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:Int32">[ApplicantCounter]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:Int32">[ApplicantCounter + 1]</InArgument>
-              </Assign.Value>
-            </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="894.4,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[ResumeFile]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[item.split("\"c).Last]</InArgument>
-              </Assign.Value>
-            </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="894.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[ResumeFileType]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[item.split("."c).Last]</InArgument>
-              </Assign.Value>
-            </Assign>
-            <If Condition="[ResumeFileType = &quot;doc&quot; OR ResumeFileType = &quot;docx&quot;]" sap:VirtualizedContainerService.HintSize="894.4,468" sap2010:WorkflowViewState.IdRef="If_1">
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1040.8,164" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Int32">[ApplicantCounter]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Int32">[ApplicantCounter + 1]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[ResumeFile]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[item.split("\"c).Last]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[ResumeFileType]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[item.split("."c).Last]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+            </ui:MultipleAssign>
+            <If Condition="[ResumeFileType = &quot;doc&quot; OR ResumeFileType = &quot;docx&quot;]" sap:VirtualizedContainerService.HintSize="1040.8,468" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Sequence DisplayName="Seq - Word route" sap:VirtualizedContainerService.HintSize="475.2,318.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
@@ -185,8 +199,8 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:ReadColumn DisplayName="Read Column for Skills" sap:VirtualizedContainerService.HintSize="894.4,88" sap2010:WorkflowViewState.IdRef="ReadColumn_2" Result="[SkillsIenum]" SheetName="Sheet1" StartingCell="A2" WorkbookPath="[SkillsFile]" />
-            <Assign sap:VirtualizedContainerService.HintSize="894.4,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+            <ui:ReadColumn DisplayName="Read Column for Skills" sap:VirtualizedContainerService.HintSize="1040.8,88" sap2010:WorkflowViewState.IdRef="ReadColumn_2" Result="[SkillsIenum]" SheetName="Sheet1" StartingCell="A2" WorkbookPath="[SkillsFile]" />
+            <Assign sap:VirtualizedContainerService.HintSize="1040.8,60" sap2010:WorkflowViewState.IdRef="Assign_12">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[SkillsCounter]</OutArgument>
               </Assign.To>
@@ -194,51 +208,57 @@
                 <InArgument x:TypeArguments="x:Int32">0</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each Skill" sap:VirtualizedContainerService.HintSize="894.4,893.6" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[SkillsIenum]">
+            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each Skill" sap:VirtualizedContainerService.HintSize="1040.8,865.6" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[SkillsIenum]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="837.6,768.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1005.6,740.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[ResumeOutput.Contains(item.ToString)]" sap:VirtualizedContainerService.HintSize="796,676" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If Condition="[ResumeOutput.Contains(item.ToString)]" sap:VirtualizedContainerService.HintSize="964,648" sap2010:WorkflowViewState.IdRef="If_5">
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="652,526.4" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <Sequence sap:VirtualizedContainerService.HintSize="820,498.4" sap2010:WorkflowViewState.IdRef="Sequence_12">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <If Condition="[SkillsCounter = 0]" sap:VirtualizedContainerService.HintSize="610.4,433.6" sap2010:WorkflowViewState.IdRef="If_6">
+                          <If Condition="[SkillsCounter = 0]" sap:VirtualizedContainerService.HintSize="778.4,405.6" sap2010:WorkflowViewState.IdRef="If_6">
                             <If.Then>
-                              <Sequence sap2010:Annotation.AnnotationText="For the first skill, do this" sap:VirtualizedContainerService.HintSize="304,284" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                              <Sequence sap2010:Annotation.AnnotationText="For the first skill, do this" sap:VirtualizedContainerService.HintSize="472,256" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_14">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:String">[SkillsString]</OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:String">[item.ToString]</InArgument>
-                                  </Assign.Value>
-                                </Assign>
-                                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_13">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:Int32">[SkillsCounter]</OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:Int32">[SkillsCounter + 1]</InArgument>
-                                  </Assign.Value>
-                                </Assign>
+                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="430.4,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                                  <ui:MultipleAssign.AssignOperations>
+                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:String">[SkillsString]</OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">[item.ToString]</InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:Int32">[SkillsCounter]</OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:Int32">[SkillsCounter + 1]</InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                    </scg:List>
+                                  </ui:MultipleAssign.AssignOperations>
+                                </ui:MultipleAssign>
                               </Sequence>
                             </If.Then>
                             <If.Else>
@@ -264,8 +284,8 @@
                 </ActivityAction>
               </ui:ForEach.Body>
             </ui:ForEach>
-            <ui:ReadColumn DisplayName="Read Column for Categories" sap:VirtualizedContainerService.HintSize="894.4,88" sap2010:WorkflowViewState.IdRef="ReadColumn_3" Result="[Categories_ienum]" SheetName="Sheet1" StartingCell="B2" WorkbookPath="[CategoriesFile]" />
-            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each Category" sap:VirtualizedContainerService.HintSize="894.4,669.6" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Categories_ienum]">
+            <ui:ReadColumn DisplayName="Read Column for Categories" sap:VirtualizedContainerService.HintSize="1040.8,88" sap2010:WorkflowViewState.IdRef="ReadColumn_3" Result="[Categories_ienum]" SheetName="Sheet1" StartingCell="B2" WorkbookPath="[CategoriesFile]" />
+            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each Category" sap:VirtualizedContainerService.HintSize="1040.8,669.6" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Categories_ienum]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -294,14 +314,25 @@
                 </ActivityAction>
               </ui:ForEach.Body>
             </ui:ForEach>
-            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ApplicantCounter,ResumeFile,SkillsString}]" DataTable="[dt_Report]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="894.4,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-            <ui:OutputDataTable DataTable="[dt_Report]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="894.4,22.4" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[ReportOutput]" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="894.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[ReportOutput]" />
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ApplicantCounter,ResumeFile,SkillsString}]" DataTable="[dt_Report]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="1040.8,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+            <ui:OutputDataTable DataTable="[dt_Report]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="1040.8,22.4" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[ReportOutput]" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1040.8,264" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,185.6" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[ReportOutput]" />
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="971.2,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1117.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="475.2,511.2" sap2010:WorkflowViewState.IdRef="Sequence_17">
           <sap:WorkflowViewStateService.ViewState>
@@ -336,7 +367,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:WriteCell sap2010:Annotation.AnnotationText="Clear sheet" Cell="A1:O20" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="971.2,147.2" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" WorkbookPath="output/Report.xlsx">
+    <ui:WriteCell sap2010:Annotation.AnnotationText="Clear sheet" Cell="A1:O20" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1117.6,147.2" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" WorkbookPath="output/Report.xlsx">
       <ui:WriteCell.Text>
         <InArgument x:TypeArguments="x:String">
           <Literal x:TypeArguments="x:String" Value="" />
@@ -348,6 +379,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:WriteCell>
-    <ui:WriteRange AddHeaders="True" DataTable="[dt_Report]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="971.2,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" StartingCell="A1" WorkbookPath="output/Report.xlsx" />
+    <ui:WriteRange AddHeaders="True" DataTable="[dt_Report]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="1117.6,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" StartingCell="A1" WorkbookPath="output/Report.xlsx" />
   </Sequence>
 </Activity>
