@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1037.6,3716</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1037.6,3848.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExtractJobDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="70">
@@ -49,7 +49,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="37">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="74">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -86,6 +86,7 @@
       <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
@@ -94,7 +95,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="ExtractJobDetails" sap:VirtualizedContainerService.HintSize="1048,3651.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExtractJobDetails" sap:VirtualizedContainerService.HintSize="1048,3784" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd1:DataTable" Name="Details_dt" />
       <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="URL_ienum" />
@@ -112,24 +113,20 @@
       <Variable x:TypeArguments="x:String" Name="Gap" />
       <Variable x:TypeArguments="x:Boolean" Name="Gap_exists" />
       <Variable x:TypeArguments="ui:UiElement" Name="GapElement" />
-      <Variable x:TypeArguments="scg:List(x:String)" Name="DetailsList">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new List(Of String) from {}" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(Of String) from {}]" Name="DetailsList" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Teachers--Ph...'" sap:VirtualizedContainerService.HintSize="1006.4,3558.4" sap2010:WorkflowViewState.IdRef="BrowserScope_5" InformativeScreenshot="8ea29d7d482dac55ea2004c34341cd44" Selector="&lt;html app='chrome.exe' title='* | MyCareersFuture Singapore' /&gt;&#xA;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Teachers--Ph...'" sap:VirtualizedContainerService.HintSize="1006.4,3691.2" sap2010:WorkflowViewState.IdRef="BrowserScope_5" InformativeScreenshot="8ea29d7d482dac55ea2004c34341cd44" Selector="&lt;html app='chrome.exe' title='* | MyCareersFuture Singapore' /&gt;&#xA;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="972.8,3411.2" sap2010:WorkflowViewState.IdRef="Sequence_48">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="972.8,3544" sap2010:WorkflowViewState.IdRef="Sequence_48">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -151,6 +148,7 @@
                 <OutArgument x:TypeArguments="x:String">[JobRef]</OutArgument>
               </ui:GetValue.Value>
             </ui:GetValue>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="931.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Job Ref = &quot; + JobRef]" />
             <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Company" sap:VirtualizedContainerService.HintSize="931.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_23">
               <ui:GetValue.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7b71ae5b-855c-46b2-9da1-077b18fab4ca" InformativeScreenshot="abd7661f4e18517fd3bffea78225b827" Selector="&lt;html app='chrome.exe' title='*' /&gt;&#xA;&lt;webctrl tag='P' class='f6 fw6 mv0 black-80 mr2 di ttu' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;p' parentid='job-details' /&gt;&#xA;">
@@ -490,7 +488,7 @@
             </TryCatch>
             <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Salary Range" sap:VirtualizedContainerService.HintSize="931.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_32">
               <ui:GetValue.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fc1679e8-dafe-4350-8bb4-168b22478dfb" InformativeScreenshot="77a98016ff217c5f4222504a7c9d15b4" Selector="&lt;webctrl parentid='job-details' tag='DIV' class='salary tr-l' innertext='$*to$*Monthly' parentclass='salary w-100 mt3 mb2 tr' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fc1679e8-dafe-4350-8bb4-168b22478dfb" InformativeScreenshot="77a98016ff217c5f4222504a7c9d15b4" Selector="&lt;webctrl parentid='job-details' tag='DIV' class='*tr-l' innertext='$*to$*Monthly' parentclass='salary w-100 mt3 mb2 tr' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
