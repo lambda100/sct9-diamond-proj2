@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1112.8,5352</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1126.4,3800</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExtractJobDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
@@ -97,7 +97,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="ExtractJobDetails" sap:VirtualizedContainerService.HintSize="1123.2,5287.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExtractJobDetails" sap:VirtualizedContainerService.HintSize="628.8,3735.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd1:DataTable" Name="Details_dt" />
       <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="URL_ienum" />
@@ -123,33 +123,33 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1081.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Entered ExtractJobDetails3&quot;]" />
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1081.6,4928.8" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[BrowserJobDetails]" Url="[in_Url]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="587.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Trace" Message="[&quot;Entering ExtractJobDetails3&quot;]" />
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="587.2,3376.8" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[BrowserJobDetails]" Url="[in_Url]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1048,4826.4" sap2010:WorkflowViewState.IdRef="Sequence_53">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="553.6,3274.4" sap2010:WorkflowViewState.IdRef="Sequence_53">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[BrowserJobDetails]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="1006.4,4238.4" sap2010:WorkflowViewState.IdRef="BrowserScope_6">
+            <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[BrowserJobDetails]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="512,2686.4" sap2010:WorkflowViewState.IdRef="BrowserScope_6">
               <ui:BrowserScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="972.8,4129.6" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="478.4,2577.6" sap2010:WorkflowViewState.IdRef="Sequence_54">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Job Ref" sap:VirtualizedContainerService.HintSize="931.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_33">
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Job Ref" sap:VirtualizedContainerService.HintSize="436.8,107.2" sap2010:WorkflowViewState.IdRef="GetValue_33">
                       <ui:GetValue.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="124fd59c-ff39-4c70-aa1e-71e7dd5d6a3f" InformativeScreenshot="a9438c0d67849dd9480c4ffe7801fde2" Selector="&lt;webctrl aaname='MCF-202?-*' parentid='job-details' tag='SPAN' /&gt;&#xA;">
                           <ui:Target.TimeoutMS>
@@ -164,10 +164,10 @@
                         <OutArgument x:TypeArguments="x:String">[JobRef]</OutArgument>
                       </ui:GetValue.Value>
                     </ui:GetValue>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="931.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[&quot;Job Ref = &quot; + JobRef]" />
-                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Company" sap:VirtualizedContainerService.HintSize="931.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_34">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Job Ref = &quot; + JobRef]" />
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Company" sap:VirtualizedContainerService.HintSize="436.8,107.2" sap2010:WorkflowViewState.IdRef="GetValue_34">
                       <ui:GetValue.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7b71ae5b-855c-46b2-9da1-077b18fab4ca" InformativeScreenshot="abd7661f4e18517fd3bffea78225b827" Selector="&lt;html app='chrome.exe' idx='2' /&gt;&#xA;&lt;webctrl tag='P' class='f6 fw6 mv0 black-80 mr2 di ttu' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;p' parentid='job-details' parentclass='jobInfo w-100 dib v-top relative' /&gt;&#xA;">
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7b71ae5b-855c-46b2-9da1-077b18fab4ca" InformativeScreenshot="abd7661f4e18517fd3bffea78225b827" Selector="&lt;html app='chrome.exe' idx='2' /&gt;&#xD;&#xA;&lt;webctrl tag='P' class='f6 fw6 mv0 black-80 mr2 di ttu' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;p' parentid='job-details' parentclass='jobInfo w-100 dib v-top relative' /&gt;&#xD;&#xA;">
                           <ui:Target.TimeoutMS>
                             <InArgument x:TypeArguments="x:Int32" />
                           </ui:Target.TimeoutMS>
@@ -197,7 +197,7 @@
                     </ui:GetValue>
                     <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Score" sap:VirtualizedContainerService.HintSize="436.8,107.2" sap2010:WorkflowViewState.IdRef="GetValue_36">
                       <ui:GetValue.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f4ac9c47-9fcc-4d72-9691-2d3a59147e99" InformativeScreenshot="1c5c53cb64b6c3bbb2b591c97ea99430" Selector="&lt;html app='chrome.exe' idx='2' /&gt;&#xA;&lt;webctrl tag='SPAN' class='green f5 fw4 i' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;span' parentid='job-details' aaname='*% skills matched' /&gt;&#xA;">
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f4ac9c47-9fcc-4d72-9691-2d3a59147e99" InformativeScreenshot="1c5c53cb64b6c3bbb2b591c97ea99430" Selector="&lt;html app='chrome.exe' idx='2' /&gt;&#xD;&#xA;&lt;webctrl tag='SPAN' class='green f5 fw4 i' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;span' parentid='job-details' aaname='*% skills matched' /&gt;&#xD;&#xA;">
                           <ui:Target.TimeoutMS>
                             <InArgument x:TypeArguments="x:Int32" />
                           </ui:Target.TimeoutMS>
@@ -239,7 +239,7 @@
                         </ui:Target>
                       </ui:UiElementExists.Target>
                     </ui:UiElementExists>
-                    <If Condition="[Gap_exists]" DisplayName="If Gap exists" sap:VirtualizedContainerService.HintSize="931.2,1604.8" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If Condition="[Gap_exists]" DisplayName="If Gap exists" sap:VirtualizedContainerService.HintSize="436.8,52.8" sap2010:WorkflowViewState.IdRef="If_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -247,7 +247,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="553.6,1455.2" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                        <Sequence sap:VirtualizedContainerService.HintSize="553.6,1167.2" sap2010:WorkflowViewState.IdRef="Sequence_52">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="GapChildren" />
                           </Sequence.Variables>
@@ -265,7 +265,7 @@
                               </ui:Target>
                             </ui:WaitUiElementAppear.Target>
                           </ui:WaitUiElementAppear>
-                          <ui:CommentOut sap2010:Annotation.AnnotationText="OCR alternative" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="512,372" sap2010:WorkflowViewState.IdRef="CommentOut_30">
+                          <ui:CommentOut sap2010:Annotation.AnnotationText="OCR alternative" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="512,84" sap2010:WorkflowViewState.IdRef="CommentOut_30">
                             <ui:CommentOut.Body>
                               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,262.4" sap2010:WorkflowViewState.IdRef="Sequence_49">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -303,8 +303,8 @@
                             </ui:CommentOut.Body>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -399,7 +399,7 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;No skill gaps&quot;]" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;No gaps&quot;]" />
                       </If.Else>
                     </If>
                     <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Employment Type'" sap:VirtualizedContainerService.HintSize="436.8,107.2" sap2010:WorkflowViewState.IdRef="GetValue_38">
@@ -510,7 +510,7 @@
                         </Catch>
                       </TryCatch.Catches>
                     </TryCatch>
-                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Salary Range" sap:VirtualizedContainerService.HintSize="931.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_43">
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Salary Range" sap:VirtualizedContainerService.HintSize="436.8,107.2" sap2010:WorkflowViewState.IdRef="GetValue_43">
                       <ui:GetValue.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fc1679e8-dafe-4350-8bb4-168b22478dfb" InformativeScreenshot="77a98016ff217c5f4222504a7c9d15b4" Selector="&lt;html app='chrome.exe' idx='2' /&gt;&lt;webctrl parentid='job-details' tag='DIV' class='*tr-l' innertext='$*to$*Monthly' parentclass='salary w-100 mt3 mb2 tr' /&gt;">
                           <ui:Target.TimeoutMS>
@@ -529,9 +529,9 @@
                 </ActivityAction>
               </ui:BrowserScope.Body>
             </ui:BrowserScope>
-            <ui:Replace BuilderPattern="to" sap:VirtualizedContainerService.HintSize="1006.4,60" sap2010:WorkflowViewState.IdRef="Replace_3" Input="[MonthlySalaryRange]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;to&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="to" RegexOption="IgnoreCase, Compiled" Replacement=" to " Result="[MonthlySalaryRange]" />
-            <ui:Replace BuilderPattern="to" sap:VirtualizedContainerService.HintSize="1006.4,60" sap2010:WorkflowViewState.IdRef="Replace_4" Input="[MonthlySalaryRange]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;to&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="Monthly" RegexOption="IgnoreCase, Compiled" Replacement=" Monthly" Result="[MonthlySalaryRange]" />
-            <Assign sap:VirtualizedContainerService.HintSize="1006.4,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+            <ui:Replace BuilderPattern="to" sap:VirtualizedContainerService.HintSize="512,60" sap2010:WorkflowViewState.IdRef="Replace_3" Input="[MonthlySalaryRange]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;to&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="to" RegexOption="IgnoreCase, Compiled" Replacement=" to " Result="[MonthlySalaryRange]" />
+            <ui:Replace BuilderPattern="to" sap:VirtualizedContainerService.HintSize="512,60" sap2010:WorkflowViewState.IdRef="Replace_4" Input="[MonthlySalaryRange]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;to&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="Monthly" RegexOption="IgnoreCase, Compiled" Replacement=" Monthly" Result="[MonthlySalaryRange]" />
+            <Assign sap:VirtualizedContainerService.HintSize="512,60" sap2010:WorkflowViewState.IdRef="Assign_12">
               <Assign.To>
                 <OutArgument x:TypeArguments="scg:List(x:String)">[out_Details]</OutArgument>
               </Assign.To>
@@ -539,12 +539,12 @@
                 <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String) From {JobRef, Company, Position, Score, Gap, EmpType, JobLevel, JobFunction, Address, YearExperience, MonthlySalaryRange}]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1006.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Trace" Message="[out_Details.ToString]" />
-            <ui:CloseTab Browser="[BrowserJobDetails]" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="1006.4,22.4" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="512,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[out_Details.ToString]" />
+            <ui:CloseTab Browser="[BrowserJobDetails]" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="512,22.4" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
           </Sequence>
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1081.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Exiting ExtractJobDetails3&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="587.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Trace" Message="[&quot;Exiting ExtractJobDetails3&quot;]" />
   </Sequence>
 </Activity>
