@@ -1,7 +1,7 @@
 {
   "name": "SCT9_Diamond_Project2",
   "description": "SCT9 Project 2 for Team Diamond",
-  "main": "Main.xaml",
+  "main": "old_files\\Main.xaml",
   "dependencies": {
     "UiPath.Credentials.Activities": "[2.0.0]",
     "UiPath.Excel.Activities": "[2.11.4]",
@@ -45,8 +45,8 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "fb9ac544-66b2-43e3-9f69-aee30346d2d4",
+      "filePath": "old_files\\Main.xaml",
+      "uniqueId": "39806e33-9887-4252-9ceb-bcf48290efa5",
       "input": [],
       "output": []
     }
