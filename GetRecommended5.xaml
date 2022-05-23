@@ -99,7 +99,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="993.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Trace" Message="[&quot;Entering GetRecommended5&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="993.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Entering GetRecommended5&quot;]" />
     <ui:BuildDataTable DataTable="[dt_Url]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="993.6,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;No.&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Filename&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Skills&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;URL&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Job_x0020_Ref&quot; msdata:Caption=&quot;&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Company&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Position&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Score&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Gap&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Emp_x0020_Type&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Job_x0020_Level&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Job_x0020_Function&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Year_x0020_Exp&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Salary&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
     <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="993.6,4683.2" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://www.mycareersfuture.gov.sg/search?sortBy=relevancy&amp;page=0">
       <ui:OpenBrowser.Body>
@@ -124,7 +124,7 @@
                 </InArgument>
               </ui:ReadRange.Range>
             </ui:ReadRange>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="918.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info" Message="[&quot;dt_ExcelColumns.RowCount = &quot; + dt_ExcelColumns.RowCount.ToString]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="918.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Trace" Message="[&quot;dt_ExcelColumns.RowCount = &quot; + dt_ExcelColumns.RowCount.ToString]" />
             <Assign sap:VirtualizedContainerService.HintSize="918.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[EachRowIndex]</OutArgument>
@@ -149,7 +149,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="843.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Trace" Message="[&quot;Entering For Each Row in Data Table sequence&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="843.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;Entered For Each Row in Data Table sequence&quot;]" />
                     <Sequence DisplayName="Seq - Reset skills" sap:VirtualizedContainerService.HintSize="843.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -658,7 +658,7 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="801.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Trace" Message="[&quot;Entering Get Recommended sequence&quot;]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="801.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[&quot;Entered Get Recommended sequence&quot;]" />
                       <ui:Comment sap:VirtualizedContainerService.HintSize="801.6,113.6" sap2010:WorkflowViewState.IdRef="Comment_4" Text="Debugging with Breakpoints, works. Delay of 2 seconds is not enough. WTF.&#xA;&#xA;Do While works..." />
                       <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[FindChildrenOutput.Count = 0]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="801.6,500" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
                         <ui:InterruptibleDoWhile.Body>
@@ -681,7 +681,7 @@
                           </Sequence>
                         </ui:InterruptibleDoWhile.Body>
                       </ui:InterruptibleDoWhile>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="801.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;FindChildrenOutput.Count = &quot; + FindChildrenOutput.Count.ToString]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="801.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Trace" Message="[&quot;FindChildrenOutput.Count = &quot; + FindChildrenOutput.Count.ToString]" />
                       <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each Recommended" sap:VirtualizedContainerService.HintSize="801.6,1510.4" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[FindChildrenOutput]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="ui:UiElement">
@@ -697,7 +697,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="724.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Trace" Message="[&quot;Entering For Each Recommended&quot;]" />
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="724.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Info" Message="[&quot;Entered For Each Recommended&quot;]" />
                               <ui:AnchorBase AnchorPosition="Auto" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="724.8,200" sap2010:WorkflowViewState.IdRef="AnchorBase_3">
                                 <ui:AnchorBase.Action>
                                   <ActivityAction x:TypeArguments="ui:Anchor">
@@ -792,9 +792,9 @@
                                   <InArgument x:TypeArguments="x:String" x:Key="in_Url">[UrlTemp]</InArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="724.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Trace" Message="[&quot;Exited invoked ExtractJobDetails3&quot;]" />
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="724.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;Exited invoked ExtractJobDetails3&quot;]" />
                               <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{EachRowIndex, EachRowFilename, EachRowSkills, UrlTemp, DetailsListString(0), DetailsListString(1), DetailsListString(2), DetailsListString(3), DetailsListString(4), DetailsListString(5), DetailsListString(6), DetailsListString(7), DetailsListString(8), DetailsListString(9), DetailsListString(10)}]" DataTable="[dt_Url]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="724.8,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="724.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="Trace" Message="[&quot;Exiting For Each Recommended&quot;]" />
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="724.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="Info" Message="[&quot;Exiting For Each Recommended&quot;]" />
                             </Sequence>
                           </ActivityAction>
                         </ui:ForEach.Body>
@@ -805,9 +805,9 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ForEach>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="801.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Trace" Message="[&quot;Exiting Get Recommended sequence&quot;]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="801.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;Exiting Get Recommended sequence&quot;]" />
                     </Sequence>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="843.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Trace" Message="[&quot;Exiting For Each Row in Data Table sequence&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="843.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Info" Message="[&quot;Exiting For Each Row in Data Table sequence&quot;]" />
                   </Sequence>
                 </ActivityAction>
               </ui:ForEachRow.Body>
@@ -821,7 +821,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:OutputDataTable DataTable="[dt_Url]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[OutputString]" />
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[OutputString]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Trace" Message="[OutputString]" />
                 </Sequence>
               </ui:CommentOut.Body>
             </ui:CommentOut>
@@ -836,6 +836,6 @@
       </sap:WorkflowViewStateService.ViewState>
     </ui:OpenBrowser>
     <ui:WriteRange AddHeaders="True" DataTable="[dt_Url]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="993.6,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="output/Report.xlsx" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="993.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Trace" Message="[&quot;Exiting GetRecommended5&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="993.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Exiting GetRecommended5&quot;]" />
   </Sequence>
 </Activity>
