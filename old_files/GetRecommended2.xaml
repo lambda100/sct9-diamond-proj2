@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Activity mc:Ignorable="sap sap2010" x:Class="PopulateSkills" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1127.2,6146.4" sap2010:WorkflowViewState.IdRef="PopulateSkills_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -67,7 +68,6 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.Word</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -115,11 +115,11 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ReadColumn>
-            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each Skill in Column C" sap:VirtualizedContainerService.HintSize="1020.8,5152" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[SkillsIenum]">
+            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each Row of Skills in Column C" sap:VirtualizedContainerService.HintSize="1020.8,5152" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[SkillsIenum]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="SkillsRow" />
                   </ActivityAction.Argument>
                   <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="985.6,5027.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
@@ -293,7 +293,7 @@
                           <OutArgument x:TypeArguments="x:String">[SkillsString]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[item.ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String">[SkillsRow.ToString]</InArgument>
                         </Assign.Value>
                       </Assign>
                       <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="745.6,264" sap2010:WorkflowViewState.IdRef="CommentOut_1">
@@ -320,7 +320,7 @@
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>
-                              <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
+                              <DelegateInArgument x:TypeArguments="x:Object" Name="SkillEach" />
                             </ActivityAction.Argument>
                             <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="710.4,1388" sap2010:WorkflowViewState.IdRef="Sequence_7">
                               <sap:WorkflowViewStateService.ViewState>
@@ -395,7 +395,7 @@
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[item.ToString]" />
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[SkillEach\.ToString]" />
                                         </Sequence>
                                       </ui:CommentOut.Body>
                                     </ui:CommentOut>
@@ -496,7 +496,7 @@
                                 <x:Reference>__ReferenceID2</x:Reference>
                                 <x:Reference>__ReferenceID3</x:Reference>
                               </Flowchart>
-                              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="Cannot use SimulateClick" DisplayName="Type Into 'DIV'" sap:VirtualizedContainerService.HintSize="668.8,166.4" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="True" SimulateType="False" Text="[item.ToString]">
+                              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="Cannot use SimulateClick" DisplayName="Type Into 'DIV'" sap:VirtualizedContainerService.HintSize="668.8,166.4" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="True" SimulateType="False" Text="[SkillEach.ToString]">
                                 <ui:TypeInto.Target>
                                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a938777e-2988-4551-9140-aeff2f6f366e" InformativeScreenshot="622b7f369272857e896c9e7c8abd1a44" Selector="&lt;webctrl parentid='react-select-*--value' tag='DIV' aaname='e.g. &amp;apos;Accounting&amp;apos; or &amp;apos;Accountant&amp;apos;' /&gt;&#xA;">
                                     <ui:Target.TimeoutMS>
@@ -652,7 +652,7 @@
                         </Assign.Value>
                       </Assign>
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="724.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Trace" Message="[&quot;URL = &quot; + UrlString]" />
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Get List of details from Invoked workflow" DisplayName="Invoke ExtractJobDetails2 workflow" sap:VirtualizedContainerService.HintSize="724.8,144.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ExtractJobDetails2.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Get List of details from Invoked workflow" DisplayName="Invoke ExtractJobDetails2 workflow" sap:VirtualizedContainerService.HintSize="724.8,144.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="old_files\ExtractJobDetails2.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_Details">[DetailsListString]</OutArgument>
                         </ui:InvokeWorkflowFile.Arguments>

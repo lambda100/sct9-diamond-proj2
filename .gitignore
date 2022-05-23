@@ -1,0 +1,10 @@
+# Inputs #
+##########
+
+input\resumes\*
+\input\resumes\*
+
+# Outputs #
+###########
+
+#\output\reports
