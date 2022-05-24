@@ -1,0 +1,5 @@
+Sub FormatReport()
+
+    ActiveWorkbook.SaveAs Filename = "C:\Proj\UiPath\SCT9_Diamond_Project2\output\Report.xlsm", FileFormat:=52
+
+End Sub
