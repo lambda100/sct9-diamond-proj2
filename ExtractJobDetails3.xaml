@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1112.8,5352</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1224,5352</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExtractJobDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
@@ -180,7 +180,7 @@
                         <OutArgument x:TypeArguments="x:String">[Company]</OutArgument>
                       </ui:GetValue.Value>
                     </ui:GetValue>
-                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Position" sap:VirtualizedContainerService.HintSize="436.8,107.2" sap2010:WorkflowViewState.IdRef="GetValue_35">
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Position" sap:VirtualizedContainerService.HintSize="931.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_35">
                       <ui:GetValue.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b0ad3a2e-5c0a-4505-a314-a951bed5f2d4" InformativeScreenshot="a38c126661882831d466fcfe08b5be00" Selector="&lt;html app='chrome.exe' idx='2' /&gt;&lt;webctrl tag='H1' class='f3 fw6 mv0 pv0 mb1 dark-pink w-100 dib' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;h1' parentid='job-details' /&gt;">
                           <ui:Target.TimeoutMS>
@@ -195,7 +195,7 @@
                         <OutArgument x:TypeArguments="x:String">[Position]</OutArgument>
                       </ui:GetValue.Value>
                     </ui:GetValue>
-                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Score" sap:VirtualizedContainerService.HintSize="436.8,107.2" sap2010:WorkflowViewState.IdRef="GetValue_36">
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Score" sap:VirtualizedContainerService.HintSize="931.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_36">
                       <ui:GetValue.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f4ac9c47-9fcc-4d72-9691-2d3a59147e99" InformativeScreenshot="1c5c53cb64b6c3bbb2b591c97ea99430" Selector="&lt;html app='chrome.exe' idx='2' /&gt;&#xA;&lt;webctrl tag='SPAN' class='green f5 fw4 i' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;span' parentid='job-details' aaname='*% skills matched' /&gt;&#xA;">
                           <ui:Target.TimeoutMS>
@@ -210,15 +210,15 @@
                         <OutArgument x:TypeArguments="x:String">[Score]</OutArgument>
                       </ui:GetValue.Value>
                     </ui:GetValue>
-                    <Assign sap:VirtualizedContainerService.HintSize="436.8,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                    <Assign sap:VirtualizedContainerService.HintSize="931.2,60" sap2010:WorkflowViewState.IdRef="Assign_13">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[Score]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[Score.Split(" "c).First]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[Score.Split("%"c).First]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:InjectJsScript InputParameter="{x:Null}" ScriptOutput="{x:Null}" DisplayName="Inject Js Script" sap:VirtualizedContainerService.HintSize="436.8,96.8" sap2010:WorkflowViewState.IdRef="InjectJsScript_4" ScriptCode="input\JS_ScrollToEl.js">
+                    <ui:InjectJsScript InputParameter="{x:Null}" ScriptOutput="{x:Null}" DisplayName="Inject Js Script" sap:VirtualizedContainerService.HintSize="931.2,96.8" sap2010:WorkflowViewState.IdRef="InjectJsScript_4" ScriptCode="input\JS_ScrollToEl.js">
                       <ui:InjectJsScript.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="369fd603-d2e0-4918-94ac-715f49d18387" WaitForReady="COMPLETE">
                           <ui:Target.TimeoutMS>
@@ -227,7 +227,7 @@
                         </ui:Target>
                       </ui:InjectJsScript.Target>
                     </ui:InjectJsScript>
-                    <ui:UiElementExists DisplayName="Element Exists 'DIV'" Exists="[Gap_exists]" sap:VirtualizedContainerService.HintSize="436.8,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                    <ui:UiElementExists DisplayName="Element Exists 'DIV'" Exists="[Gap_exists]" sap:VirtualizedContainerService.HintSize="931.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
                       <ui:UiElementExists.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2fcc0738-8e98-40fb-a01b-bed977a9bc8b" InformativeScreenshot="bc6be4056773a3d022e8a7e827dbc66d" Selector="&lt;html app='chrome.exe' idx='2' /&gt;&lt;webctrl parentid='skills-needed' tag='DIV' /&gt;">
                           <ui:Target.TimeoutMS>

@@ -1,3 +1,4 @@
 Sub ClearSheet()
-Sheets("Sheet1").Cells.Clear
+	Sheets("Sheet1").Cells.Clear
+	Sheets("Sheet1").Cells.Interior.Color = xlNone
 End Sub

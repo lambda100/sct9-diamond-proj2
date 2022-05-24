@@ -24,5 +24,17 @@ Sub FormatReport()
         .ColumnWidth = 53#
         .WrapText = True
     End With
+	
+	Range("A1").AutoFilter
+	Range("A:O").Sort Key1:=Range("H1"), Order1:=xlDescending
+	
+	Range("H:H").Select
+	For Each rng In Selection
+		If IsNumeric(rng.Value) Then
+			If rng.Value >= 70 Then
+				rng.Interior.Color = vbGreen
+			End If
+		End If
+	Next rng
 
 End Sub
