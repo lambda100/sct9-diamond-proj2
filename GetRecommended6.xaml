@@ -1,4 +1,4 @@
-﻿<Activity mc:Ignorable="sap sap2010" x:Class="PopulateSkills" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="PopulateSkills" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_NumOfPagesToScan" Type="InArgument(x:Int32)" />
   </x:Members>
@@ -78,7 +78,6 @@
       <AssemblyReference>UiPath.Word</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -712,7 +711,7 @@
                           <OutArgument x:TypeArguments="x:Int32">[PageNumber]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                          <InArgument x:TypeArguments="x:Int32">1</InArgument>
                         </Assign.Value>
                       </Assign>
                       <If sap2010:Annotation.AnnotationText="If in_NumOfPagesToScan is not set, default to int of 3&#xA;" Condition="[in_NumOfPagesToScan = 0]" sap:VirtualizedContainerService.HintSize="878.4,253.6" sap2010:WorkflowViewState.IdRef="If_8">
@@ -733,7 +732,7 @@
                         </If.Then>
                       </If>
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="878.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_28" Level="Trace" Message="[&quot;PageNumber = &quot; + PageNumber.ToString + vbNewLine + &quot;in_NumOfPagesToScan = &quot; + in_NumOfPagesToScan.ToString]" />
-                      <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[PageNumber &lt; in_NumOfPagesToScan]" DisplayName="While page within limit" sap:VirtualizedContainerService.HintSize="878.4,2983.2" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                      <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While page within limit" sap:VirtualizedContainerService.HintSize="878.4,2983.2" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
                         <ui:InterruptibleWhile.Body>
                           <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="843.2,2816" sap2010:WorkflowViewState.IdRef="Sequence_38">
                             <sap:WorkflowViewStateService.ViewState>
@@ -966,6 +965,9 @@
                             </ui:Click>
                           </Sequence>
                         </ui:InterruptibleWhile.Body>
+                        <ui:InterruptibleWhile.Condition>
+                          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="PageNumber &lt;= in_NumOfPagesToScan" />
+                        </ui:InterruptibleWhile.Condition>
                       </ui:InterruptibleWhile>
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="878.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;Exiting Get Recommended sequence&quot;]" />
                     </Sequence>
